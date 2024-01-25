@@ -68,3 +68,11 @@ class Blob:
             self.y=0
         elif self.y>SIZE-1:
             self.y=SIZE-1
+
+if start_q_table is None:
+    q_table= {}
+    for x1 in range (-SIZE+1,SIZE):
+        for y1 in range (-SIZE+1,SIZE):
+            for x2 in range (-SIZE+1,SIZE):
+                for y2 in range (-SIZE+1,SIZE):
+                    q_table[(
