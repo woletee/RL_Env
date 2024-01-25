@@ -16,3 +16,14 @@ FOOD_REWARD=25
 epsilon=0.9
 EPS_DECAY=0.9998
 SHOW_EVERY=3000
+
+
+
+start_q_table=None #or file name if you have an exisiting q_table 
+
+LEARNING_RATE=0.1
+DISCOUNT=0.95
+
+PLAYER_N=1
+FOOD_N=2
+ENEMY_N=3
