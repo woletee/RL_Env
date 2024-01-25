@@ -59,3 +59,12 @@ class Blob:
             self.y+= np.random.randint(-1,2)
         else:
             self.y+=y
+         
+        if self.x<0:
+            self.x=0
+        elif self.x>SIZE-1:
+            self.x=SIZE-1
+        if self.y<0:
+            self.y=0
+        elif self.y>SIZE-1:
+            self.y=SIZE-1
