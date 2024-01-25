@@ -106,3 +106,15 @@ for episode in range (HM_EPISODES):
             enemy.move()
             food.move()
             ############
+        
+        if player.x==enemy.x and player.y ==enemy.y:
+            reward= -ENEMY_PENALTY
+        elif player.x==food.x and player.y ==food.y:
+            reward=FOOD_REWARD
+        else:
+            reward=-MOVE_PENALITY
+        
+        new_obs=(player-food, player-enemy)
+        max_feature_q=np.max(q_table[new_obs])
+        current_q=q_table[obs][action]
+        
