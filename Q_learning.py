@@ -45,3 +45,17 @@ class Blob:
         if choice==0 :
             self.move(x=1,y=1)
         elif choice==1 :
+           self.move(x=-1,y=-1)
+        elif choice==2 :
+            self.move(x=-1,y=1)
+        elif choice==3 :
+            self.move(x=1,y=-1)
+    def move(self,x=False,y=False):
+        if not x:
+            self.x+= np.random.randint(-1,2)
+        else:
+            self.x+=x
+        if not y:
+            self.y+= np.random.randint(-1,2)
+        else:
+            self.y+=y
