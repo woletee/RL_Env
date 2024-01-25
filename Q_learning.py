@@ -75,4 +75,19 @@ if start_q_table is None:
         for y1 in range (-SIZE+1,SIZE):
             for x2 in range (-SIZE+1,SIZE):
                 for y2 in range (-SIZE+1,SIZE):
-                    q_table[(
+                    q_table[(x1,y1),(x2,y2)]= [np.random.uniform(-5,0) for i in range (4)]
+else :
+    with open(start_q_table,"rb") as f:
+        q_table=pickle.load(f)
+episode_rewards=[]    
+
+        
+for episode in range (HM_EPISODES):
+    player=Blob()
+    food=Blob()
+    enemy=Blob()
+    
+    if episode % SHOW_EVERY ==0:
+        print(f"on # {episode} , epsilon : {epsilon}")
+        print(f"{SHOW_EVERY} ep mean {np.mean (episode_rewards[-SHOW_EVERY:])}")                 
+        show=True
