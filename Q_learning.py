@@ -91,3 +91,18 @@ for episode in range (HM_EPISODES):
         print(f"on # {episode} , epsilon : {epsilon}")
         print(f"{SHOW_EVERY} ep mean {np.mean (episode_rewards[-SHOW_EVERY:])}")                 
         show=True
+   else:
+        show=False
+    
+    episode_reward=0
+    for i in range (200):
+        obs=(player-food,player-enemy)
+        if np.random.random() > epsilon:
+            action=np.argmax(q_table[obs])
+        else:
+            action=np.random.randint(0,4)
+            
+            #may be later 
+            enemy.move()
+            food.move()
+            ############
